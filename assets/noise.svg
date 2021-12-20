@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256">
+  <filter id="noise">
+    <feTurbulence baseFrequency="0.3" />
+  </filter>
+  <rect width="256" height="256" filter="url(#noise)" opacity="0.5"/>
+</svg>

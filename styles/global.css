@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "FS Aldrin";
+  src: url("../fonts/FSAldrinWeb-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "FS Aldrin";
+  src: url("../fonts/FSAldrinWeb-Medium.woff2");
+  font-weight: 700;
+}
+
+html {
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: FS Aldrin;
+  font-weight: 400;
+  color: #ffffff;
+}
