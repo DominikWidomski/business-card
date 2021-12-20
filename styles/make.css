@@ -39,3 +39,8 @@ button {
   font-family: FS Aldrin;
   font-size: 18px;
 }
+
+.required::after {
+  content: " *";
+  color: #CC0000;
+}
