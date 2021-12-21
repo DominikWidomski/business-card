@@ -1,4 +1,25 @@
-const cacheName = 'v1::static';
+function log(message, color = "black") {
+  switch (color) {
+      case "success":  
+           color = "Green"
+           break
+      case "info":     
+              color = "Blue"  
+           break;
+      case "error":   
+           color = "Red"   
+           break;
+      case "warning":  
+           color = "Orange" 
+           break;
+      default: 
+           color = color
+  }
+
+  console.log(`%cSW: ${message}`, `color:${color}`)
+}
+
+const cacheName = 'v2::static';
 
 const cacheList = [
   "assets/logo.png",
@@ -11,15 +32,22 @@ const cacheList = [
   "index.html"
 ];
 
-self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-  e.waitUntil((async () => {
+self.addEventListener('install', (event) => {
+  log('install', "info");
+  event.waitUntil((async () => {
+
+    const existingCaches = await caches.keys();
+    const invalidCaches = existingCaches.filter(existingCache => existingCache !== cacheName);
+    
+    await Promise.all(invalidCaches.map(invalidCache => caches.delete(invalidCache)));
+
     const cache = await caches.open(cacheName);
-    console.log('[Service Worker] Caching all: app shell and content');
+
+    log('caching all: app shell and content', "info");
 
     await cache.addAll(cacheList);
 
-    console.log("[Service Worker] Done");
+    log("done", "green");
   })());
 });
 
@@ -27,22 +55,23 @@ self.addEventListener('fetch', (event) => {
   event.respondWith((async () => {
     const cacheResponse = await caches.match(event.request);
     
-    console.log(`[Service Worker] Fetching resource: ${event.request.url}`);
+    log(`fetching resource: ${event.request.url}`, "info");
     
     if (cacheResponse) {
       return cacheResponse;
     }
     
     try {
+      const response = await fetch(event.request);
+      const cache = await caches.open(cacheName);
       
-    const response = await fetch(event.request);
-    const cache = await caches.open(cacheName);
-    
-    console.log(`[Service Worker] Caching new resource: ${event.request.url}`);
-    
-    cache.put(event.request, response.clone());
-    
-    return response;
+      cache.put(event.request, response.clone());
+      
+      log(`caching new resource: ${event.request.url}`, "info");
+      
+      log("done", "green");
+
+      return response;
     } catch {
       return caches.match(event.request);
     }
