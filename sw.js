@@ -19,7 +19,7 @@ function log(message, color = "black") {
   console.log(`%cSW: ${message}`, `color:${color}`)
 }
 
-const cacheName = 'v1::static';
+const cacheName = 'v2::static';
 
 const cacheList = [
   "assets/logo.png",
