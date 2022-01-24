@@ -1,6 +1,6 @@
 {
-  "name": "DD Business Card",
-  "short_name": "DD Business Card",
+  "name": "Business Card",
+  "short_name": "Business Card",
   "display": "standalone",
   "scope": "./",
   "theme_color": "#ffffff",

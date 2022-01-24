@@ -13,6 +13,10 @@ legend {
   font-size: 30px;
 }
 
+fieldset {
+  border-color: #ffffff;
+}
+
 label {
   display: flex;
   flex-direction: column;
@@ -43,4 +47,8 @@ button {
 .required::after {
   content: " *";
   color: #CC0000;
+}
+
+.radio-label {
+  flex-direction: row;
 }
