@@ -19,17 +19,34 @@ function log(message, color = "black") {
   console.log(`%cSW: ${message}`, `color:${color}`)
 }
 
-const cacheName = 'v2::static';
+const cacheName = 'v3::static';
 
 const cacheList = [
-  "assets/logo.png",
-  "assets/noise.svg",
-  "fonts/FSAldrinWeb-Medium.woff2",
-  "fonts/FSAldrinWeb-Regular.woff2",
   "scripts/QrCode.min.js",
   "styles/global.css",
   "styles/main.css",
   "index.html"
+];
+
+const plainCacheList = [
+  "assets/logo_plain.png"
+];
+
+const ddCacheList = [
+  "assets/logo.png",
+  "assets/noise.svg",
+  "fonts/FSAldrinWeb-Medium.woff2",
+  "fonts/FSAldrinWeb-Regular.woff2"  
+];
+
+const brunelloCanessaCacheList = [
+  "assets/logo_brunello_canessa.png"
+]
+
+const samanLoiraCacheList = [
+  "assets/logo_saman_loira.png",
+  "fonts/Montserrat.ttf",
+  "fonts/Newsreader.ttf"
 ];
 
 self.addEventListener('install', (event) => {
@@ -45,7 +62,14 @@ self.addEventListener('install', (event) => {
 
     log('caching all: app shell and content', "info");
 
-    await cache.addAll(cacheList);
+    await cache.addAll(
+      cacheList.concat[
+        plainCacheList,
+        ddCacheList,
+        brunelloCanessaCacheList,
+        samanLoiraCacheList
+      ]
+    );
 
     log("done", "green");
   })());

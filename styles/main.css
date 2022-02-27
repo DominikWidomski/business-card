@@ -38,6 +38,10 @@
   background: #333333;
 }
 
+.saman_loira {
+  background: #efefef;
+}
+
 .business-card--plain {
   justify-content: flex-end;
   background: #ffffff;
@@ -83,4 +87,24 @@
   background-image: url("../assets/logo_brunello_canessa.png");
   width: 100%;
   height: 150px;
+}
+
+.business-card--saman_loira {
+  background: #ffffff;
+  color: #333333;
+  font-family: 'Newsreader', serif;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.business-card--saman_loira .logo {
+  background-image: url("../assets/logo_saman_loira.png");
+  width: 90%;
+  margin: 0 auto;
+  height: 150px;
+  margin-top: 40px;
+}
+
+.business-card--saman_loira .role {
+  font-family: "Montserrat", serif;
 }
