@@ -22,11 +22,43 @@
   font-weight: 400;
 }
 
-html {
-  min-height: calc(100% + env(safe-area-inset-top));
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+@font-face {
+  font-family: "Harmonia Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/harmoniasans_n7.db6a243cdeddb2eba0b2e8fccdce1e6910fd06d0.woff2")
+    format("woff2");
 }
 
+@font-face {
+  font-family: "Harmonia Sans";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/harmoniasans_n6.dd3d6084d29e4754e80fe6aa1c0e37f511474ffa.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Harmonia Sans";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/harmoniasans_i4.ccbfea79fd847e76d49925a923aa89064359e629.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Harmonia Sans";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/harmoniasans_i7.4a7dd579ac7cb56f507f74a6af51c429211c3385.woff2")
+    format("woff2");
+}
+
+html {
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
 
 body {
   background: #fff;

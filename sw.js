@@ -45,6 +45,20 @@ const samanLoiraCacheList = [
   "fonts/Newsreader.ttf",
 ];
 
+const bellaYarnStudioCacheList = [
+  "assets/logo_bella_yarn_studio_black@2x.webp",
+  "assets/knitting-pattern-repeat-2.png",
+  // Fonts:
+  // Harmonia Sans, 700, normal
+  "fonts/harmonia_sans/harmoniasans_n7.db6a243cdeddb2eba0b2e8fccdce1e6910fd06d0.woff2",
+  // Harmonia Sans, 600, normal
+  "fonts/harmonia_sans/harmoniasans_n6.dd3d6084d29e4754e80fe6aa1c0e37f511474ffa.woff2",
+  // Harmonia Sans, 400, italic
+  "fonts/harmonia_sans/harmoniasans_i4.ccbfea79fd847e76d49925a923aa89064359e629.woff2",
+  // Harmonia Sans, 700, italic
+  "fonts/harmonia_sans/harmoniasans_i7.4a7dd579ac7cb56f507f74a6af51c429211c3385.woff2",
+];
+
 self.addEventListener("install", (event) => {
   log("install", "info");
   event.waitUntil(
@@ -68,6 +82,7 @@ self.addEventListener("install", (event) => {
           ddCacheList,
           brunelloCanessaCacheList,
           samanLoiraCacheList,
+          bellaYarnStudioCacheList)
         ]
       );
 
