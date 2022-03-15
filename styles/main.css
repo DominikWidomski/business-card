@@ -27,7 +27,7 @@
   left: 20px;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   padding: 50px 20px;
@@ -92,9 +92,9 @@
 .business-card--saman_loira {
   background: #ffffff;
   color: #333333;
-  font-family: 'Newsreader', serif;
+  font-family: "Newsreader", serif;
   border-radius: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .business-card--saman_loira .logo {
@@ -107,4 +107,37 @@
 
 .business-card--saman_loira .role {
   font-family: "Montserrat", serif;
+}
+
+.bella_yarn_studio {
+  /* background-color: #f7f9fa; */ /* actual color code from website */
+  background-color: #c9d0d4; /* made it slightly darker */
+  /* TODO: this image is not a perfect pattern. */
+  background-image: url("../assets/knitting-pattern-repeat-2.png");
+  background-size: 240px;
+}
+
+.business-card--bella_yarn_studio {
+  background-color: #ffffffe3;
+  color: #222;
+  font-family: "Harmonia Sans", sans-serif;
+}
+
+.business-card--bella_yarn_studio::after {
+  /* content: "";
+  background-image: url("../assets/noise.svg");
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; */
+}
+
+.business-card--bella_yarn_studio .logo {
+  background-image: url("../assets/logo_bella_yarn_studio_black@2x.webp");
+  background-position: center;
+  align-self: center;
+  width: 100%;
+  height: 300px;
 }
